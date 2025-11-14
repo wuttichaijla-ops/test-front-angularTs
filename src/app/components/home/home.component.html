@@ -1,0 +1,43 @@
+<div class="social-post-container">
+  <!-- Post Header -->
+  <div class="post-header">
+    <div class="user-avatar">C</div>
+    <div class="post-info">
+      <div class="post-title">Change can</div>
+      <div class="post-date">16 October 2021 16:00</div>
+    </div>
+  </div>
+
+  <!-- Main Image -->
+  <div class="post-image">
+    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=600&fit=crop" alt="Puppy and Kitten" />
+  </div>
+
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <!-- Input Comment -->
+    <div class="comment-item">
+      <div class="comment-avatar">B</div>
+      <div class="comment-content">
+        <div class="comment-author">Blend 285</div>
+        <input 
+          type="text" 
+          class="comment-input" 
+          placeholder="Comment" 
+          [(ngModel)]="newCommentText"
+          (keyup.enter)="addComment()"
+        />
+      </div>
+    </div>
+
+    <!-- Comments List -->
+    <div *ngFor="let comment of comments" class="comment-item">
+      <div class="comment-avatar">{{ comment.avatar }}</div>
+      <div class="comment-content">
+        <div class="comment-author">{{ comment.author }}</div>
+        <div class="comment-text">{{ comment.text }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
